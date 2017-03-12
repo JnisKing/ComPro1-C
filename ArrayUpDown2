@@ -1,0 +1,30 @@
+ #include <stdio.h>
+
+int A[1000][1000];
+
+void main() {
+    int sumUp = 0;
+    int sumDown = 0;
+    int R, C;
+    scanf("%d", &R);
+    C = R;
+    for(int row = 0; row < R; ++row) {
+        for(int col = 0; col < C; ++col) {
+        scanf("%d", &A[row][col]);
+        }
+    }
+
+
+    for(int row = 0; row < R - 1; ++row) {
+        for(int col = row + 1; col < C; ++col) {
+        sumUp += A[row][col];
+        }
+    }
+
+    for(int row = 1; row < R; ++row) {
+        for(int col = 0; col < row; ++col) {
+        sumDown += A[row][col];
+        }
+    }
+    printf("%d\n%d", sumUp, sumDown);
+ }
