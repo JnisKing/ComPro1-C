@@ -1,0 +1,26 @@
+#include<stdio.h>
+void main(){
+  int x,y,i=0,out=0,count=0;
+   while  (i<100000) {
+    scanf("%d %d",&x,&y);
+    if (x==0&&y==0){
+        break;
+    }
+    if (x==1) {
+        count=count+y;
+    }
+    if (x==2){
+       out=out+y;
+    }
+    i++;
+  }
+   if (out>count){
+    printf ("Bad\n");
+    printf("%d",out-count);
+  }
+  else {
+    printf ("Good\n");
+    printf("%d",count-out);
+
+  }
+}
