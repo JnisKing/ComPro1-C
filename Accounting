@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main() {
+    int income_sum = 0;
+    int expense_sum = 0;
+    int income_count = 0;
+    int expense_count = 0;
+    int type, amount;
+
+    while(1) {
+    scanf("%d", &type);
+    if(type == 0) {
+        break;
+    }
+    scanf("%d", &amount);
+    if(type == 1) {
+        ++income_count;
+        income_sum += amount;
+    } else {
+        ++expense_count;
+        expense_sum += amount;
+        }
+    }
+
+    printf("%d %d\n", income_count, expense_count);
+    printf("%d %d %d", income_sum, expense_sum,
+    income_sum - expense_sum);
+
+    return 0;
+}
