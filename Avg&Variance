@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int length = 8;
+
+double average(int* array){
+    double sum=0.0;
+
+    for(int i=0 ; i<length ; i++){
+        sum+=array[i];
+    }
+    return sum/length;
+}
+double variance(int* array, double avg){
+    double sum=0;
+    for(int i=0 ; i<length ; i++){
+        sum+=(array[i]-avg) * (array[i]-avg);
+    }
+    return sum/(length-1);
+}
+
+int main(){
+    int x;
+    int A[length];
+    for(int i=0 ; i<length ; i++){
+        scanf("%d",&x);
+         A[i] = x;
+    }
+    double avg = average(A);
+    double var = variance(A, avg);
+    printf("%.2f %.2f",avg, var);
+
+
+    return 0;
+}
