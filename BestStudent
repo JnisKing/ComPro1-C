@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+struct {
+    char id[9];
+    char name[31];
+    char surname[51];
+    float gpa;
+}
+typedef Student;
+    Student A[100];
+    int main() {
+    int N;
+    scanf("%d", &N);
+
+    int best_index = -1;
+    float best_gpa = -1;
+    int i;
+    for(i = 0; i < N; ++i) {
+        scanf("%s %s %s %f", A[i].id, A[i].name, A[i].surname, &A[i].gpa);
+        if(A[i].gpa > best_gpa) {
+            best_gpa = A[i].gpa;
+            best_index = i;
+        }
+    }
+    printf("%s %s %s %.2f", A[best_index].id, A[best_index].name,A[best_index].surname, A[best_index].gpa);
+    return 0;
+}
