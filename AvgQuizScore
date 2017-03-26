@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int A[500][10];
+
+void main() {
+    int M, N;
+    scanf("%d %d", &M, &N);
+
+    int col, row;
+    for(row = 0; row < M; ++row) {
+        for(col = 0; col < N; ++col) {
+        scanf("%d", &A[row][col]);
+        }
+    }
+
+    int sum = 0;
+    for(col = 0; col < N; ++col) {
+        for(row = 0; row < M; ++row) {
+        sum += A[row][col];
+        }
+        printf("%d ", sum);
+    }
+    printf("\n");
+
+    int sum = 0;
+    for(col = 0; col < N; ++col) {
+        for(row = 0; row < M; ++row) {
+        sum += A[row][col];
+        }
+        printf("%.2lf ", sum / (double) M);
+    }
+}
